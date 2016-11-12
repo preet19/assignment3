@@ -20,9 +20,16 @@ namespace assignment3
 {
     public partial class OrderForm : Form
     {
-        public OrderForm()
+        public OrderForm(String qs,Image pictureBox,String cost,String category)
         {
             InitializeComponent();
+            textBox1.Text = qs;
+            pictureBox1.Image = pictureBox;
+            textBox2.Text = category;
+            movieCostTextBox.Text = cost;
+            
+           // textBox6.Text = textBox5.Text + (0.13*(Convert.ToInt32(textBox5.Text)));
+            
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -85,15 +92,21 @@ namespace assignment3
             {
                 additionalLabel.Show();
                 additionalTextBox.Show();
-                additionalTextBox.Text = "$10.00";
+                additionalTextBox.Text = "10.00";
             }
-        }
+
+         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
             SelectForm selection = new SelectForm();
             this.Hide();
             selection.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
